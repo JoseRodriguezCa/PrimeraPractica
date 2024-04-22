@@ -33,7 +33,7 @@ const updateCharacter = async (req,res,next) => {
         const updateCharacter = await Character.findByIdAndUpdate(id, newCharacter, {
             new:true
         });
-        return res.status(201).json(updateCharacter);
+        return res.status(200).json(updateCharacter);
     } catch (error) {
         return res.status(400).json("Ha fallado al peticion en put");
     }
@@ -43,7 +43,7 @@ const deleteCharacter = async (req,res,next) => {
     try {
         const { id } = req.params;
         const deleteCharacter = await Character.findByIdAndDelete(id);
-        return res.status(201).json(deleteCharacter);
+        return res.status(200).json(deleteCharacter);
     } catch (error) {
         return res.status(400).json("Ha fallado al peticion en delete");
     }

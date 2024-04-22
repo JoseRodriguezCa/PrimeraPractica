@@ -34,7 +34,7 @@ const updatedevilFruit = async (req,res,next) => {
         const updatedevilFruit = await devilFruit.findByIdAndUpdate(id, newdevilFruit, {
             new:true
         });
-        return res.status(201).json(updatedevilFruit);
+        return res.status(200).json(updatedevilFruit);
     } catch (error) {
         return res.status(400).json("Ha fallado al peticion en put");
     }
@@ -44,7 +44,7 @@ const deletedevilFruit = async (req,res,next) => {
     try {
         const { id } = req.params;
         const deletedevilFruit = await devilFruit.findByIdAndDelete(id);
-        return res.status(201).json(deletedevilFruit);
+        return res.status(200).json(deletedevilFruit);
     } catch (error) {
         return res.status(400).json("Ha fallado al peticion en delete");
     }
