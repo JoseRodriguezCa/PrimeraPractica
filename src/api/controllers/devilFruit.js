@@ -60,15 +60,4 @@ const getdevilFruitsById = async (req,res,next) => {
     }
 };
 
-const getdevilFruitsByCrew = async (req,res,next) => {
-    try {
-        const { crew } = req.params;
-        const devilFruitByCrew = await devilFruit.find({ crew });
-        return res.status(200).json(devilFruitByCrew);
-    } catch (error) {
-        return res.status(400).json("Ha fallado al peticion en getByCrew");
-    }
-
-}
-
-module.exports = { getdevilFruits,postdevilFruit,updatedevilFruit,getdevilFruitsById,getdevilFruitsByCrew,deletedevilFruit }
+module.exports = { getdevilFruits,postdevilFruit,updatedevilFruit,getdevilFruitsById,deletedevilFruit }
